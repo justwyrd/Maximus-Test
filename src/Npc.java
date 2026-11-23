@@ -49,6 +49,22 @@ public class Npc {
         return this.maxHealth;
     }
 
+    //Damage method for NPC
+    public void Damage(int value){
+        this.currentHealth -= value;
+        if(this.currentHealth < 0){
+            currentHealth = 0;
+        }
+    }
+
+    //Heal method for NPC
+    public void Heal (int value){
+        this.currentHealth += value;
+        if(this.currentHealth > maxHealth){
+            currentHealth = maxHealth;
+        }
+    }
+
     //toString method for NPC class
     @Override
     public String toString(){
